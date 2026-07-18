@@ -21,7 +21,7 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="logo" href="/">どこスーパー</a>
-        <nav><a href="#how">使い方</a><a className="login" href="#login">ログイン</a></nav>
+        <nav><a href="#how">使い方</a><a className="login" href="/login">ログイン</a></nav>
       </header>
 
       <section className="hero">
