@@ -4,6 +4,7 @@ out/
 dist/
 coverage/
 .env
+tsconfig.tsbuildinfo
 .env.*
 !.env.example
 *.log
