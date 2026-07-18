@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { SiteHeader } from "../components/site-header";
+import { StoreCard } from "../components/store-card";
 import { demoStores } from "../lib/demo-data";
 
 
@@ -31,14 +32,14 @@ export default function Home() {
       <section className="content" id="stores">
         <div className="section-heading"><div><p className="eyebrow">LATEST UPDATES</p><h2>近くの店舗から探す</h2></div><span className="count">{filteredStores.length}店舗</span></div>
         <div className="store-grid">
-          {filteredStores.map((store) => <article className="store-card" key={store.name}><div className="store-icon">🛒</div><div><h3>{store.name}</h3><p>{store.area} ・ {store.distance}</p><small>最新の投稿 {store.lastUpdate}</small></div><span className="arrow">→</span></article>)}
+          {filteredStores.map((store) => <StoreCard key={store.name} {...store} />)}
         </div>
         {filteredStores.length === 0 && <p className="empty">一致する店舗がありません。商品名や市区町村を変えてお試しください。</p>}
       </section>
 
       <section className="how" id="how"><p className="eyebrow">HOW IT WORKS</p><h2>知りたい情報を、<br />知っている人から。</h2><div className="steps"><div><b>01</b><h3>見つける</h3><p>店舗や商品を検索して、最新の投稿を確認します。</p></div><div><b>02</b><h3>投稿する</h3><p>見つけた商品、価格、在庫、確認日時を投稿します。</p></div><div><b>03</b><h3>つながる</h3><p>役に立った投稿を評価して、地域の買い物を助けます。</p></div></div></section>
 
-      <footer><span>どこスーパー</span><small>東京都23区外から、買い物をもっと確かに。</small></footer>
+      <footer><div className="footer-inner"><span>どこスーパー</span><small>東京都23区外から、買い物をもっと確かに。</small></div></footer>
     </main>
   );
 }
